@@ -37,6 +37,7 @@ import android.widget.LinearLayout;
 import com.handmark.pulltorefresh.library.internal.CustomProgressFlipLoadingLayout;
 import com.handmark.pulltorefresh.library.internal.FlipLoadingLayout;
 import com.handmark.pulltorefresh.library.internal.LoadingLayout;
+import com.handmark.pulltorefresh.library.internal.RevealingLayout;
 import com.handmark.pulltorefresh.library.internal.RotateLoadingLayout;
 import com.handmark.pulltorefresh.library.internal.Utils;
 import com.handmark.pulltorefresh.library.internal.ViewCompat;
@@ -301,7 +302,7 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
 	}
 
 	@Override
-	public final void onRefreshComplete() {
+	public void onRefreshComplete() {
 		if (isRefreshing()) {
 			setState(State.RESET);
 		}
@@ -1304,7 +1305,12 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
          * Uses {@link #FLIP} as the pull action but provides usage of a custom
          * asset instead of the Progress Bar.
          */
-        CUSTOM_PROGRESS_FLIP;
+        CUSTOM_PROGRESS_FLIP,
+		
+		/**
+		 * Pull to reveal displays what is beneath it.
+		 */
+        REVEAL;
 
 		static AnimationStyle getDefault() {
 			return ROTATE;
@@ -1327,6 +1333,8 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
 					return FLIP;
 				case 0x2:
                     return CUSTOM_PROGRESS_FLIP;
+				case 0x3:
+                    return REVEAL;
 			}
 		}
 
@@ -1339,6 +1347,8 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
 					return new FlipLoadingLayout(context, mode, scrollDirection, attrs);
 				case CUSTOM_PROGRESS_FLIP:
                     return new CustomProgressFlipLoadingLayout(context, mode, scrollDirection, attrs);
+				case REVEAL:
+				    return new RevealingLayout(context, mode, scrollDirection, attrs);
 			}
 		}
 	}

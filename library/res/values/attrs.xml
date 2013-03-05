@@ -31,6 +31,8 @@
         <!-- Whether the Indicator overlay(s) should be used -->
         <attr name="ptrShowIndicator" format="reference|boolean" />
 
+        <attr name="ptrShowDefaultDrawable" format="reference|boolean" />
+        
         <!-- Drawable to use as Loading Indicator. Changes both Header and Footer. -->
         <attr name="ptrDrawable" format="reference" />
 
@@ -56,7 +58,7 @@
             <flag name="rotate" value="0x0" />
             <flag name="flip" value="0x1" />
             <flag name="customProgressFlip" value="0x2" />
-            <flag name="pullToReveal" value="0x3" />
+            <flag name="reveal" value="0x3" />
         </attr>
 
         <!-- Whether the user can scroll while the View is Refreshing -->

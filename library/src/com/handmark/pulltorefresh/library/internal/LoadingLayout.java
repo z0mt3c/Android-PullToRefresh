@@ -170,7 +170,8 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 		}
 
 		// If we don't have a user defined drawable, load the default
-		if (null == imageDrawable) {
+		boolean showDefaultDrawable = attrs.getBoolean(R.styleable.PullToRefresh_ptrShowDefaultDrawable, true);
+		if (null == imageDrawable && showDefaultDrawable) {
 			imageDrawable = context.getResources().getDrawable(getDefaultDrawableResId());
 		}
 
@@ -389,5 +390,4 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 			mSubHeaderText.setTextColor(color);
 		}
 	}
-
 }

@@ -61,7 +61,7 @@ public class FlipLoadingLayout extends LoadingLayout {
 			final int dHeight = imageDrawable.getIntrinsicHeight();
 			final int dWidth = imageDrawable.getIntrinsicWidth();
 
-			/**
+			/** 
 			 * We need to set the width/height of the ImageView so that it is
 			 * square with each side the size of the largest drawable dimension.
 			 * This is so that it doesn't clip when rotated.

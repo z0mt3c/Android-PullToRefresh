@@ -11,9 +11,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.Orientation;
  * @date   Mar 1, 2013
  * @author Nick Burton (thatsburto.com)
  */
-public class PullToRevealLayout extends LoadingLayout {
+public class RevealingLayout extends LoadingLayout {
     
-    public PullToRevealLayout(Context context, final Mode mode, final Orientation scrollDirection, TypedArray attrs) {
+    public RevealingLayout(Context context, final Mode mode, final Orientation scrollDirection, TypedArray attrs) {
         super(context, mode, scrollDirection, attrs);        
     }
 
