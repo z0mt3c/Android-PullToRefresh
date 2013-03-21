@@ -110,7 +110,7 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 		
 		if (attrs.hasValue(R.styleable.PullToRefresh_ptrDrawableRefreshBg)) {
 		    Drawable refreshBg = attrs.getDrawable(R.styleable.PullToRefresh_ptrDrawableRefreshBg);
-		    mInnerLayout.findViewById(R.id.refresh_bg).setBackground(refreshBg);
+		    mInnerLayout.findViewById(R.id.refresh_bg).setBackgroundDrawable(refreshBg);
 		}
 		
 		if (attrs.hasValue(R.styleable.PullToRefresh_ptrHeaderBackground)) {
