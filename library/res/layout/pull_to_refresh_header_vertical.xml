@@ -11,6 +11,7 @@
         android:paddingTop="@dimen/header_footer_top_bottom_padding" >
 
         <FrameLayout
+            android:id="@+id/refresh_bg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" >
@@ -43,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center_horizontal"
+            android:visibility="gone"
             android:orientation="vertical" >
 
             <TextView
